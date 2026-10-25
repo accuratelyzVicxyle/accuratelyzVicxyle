@@ -1,73 +1,82 @@
 <div align="center">
 
-# Vxmp
+# `Vxmp`
 
-`pwn` · `binary exploitation` · `vulnerability research`
+### Binary exploitation · Vulnerability research · CTF
 
-Cybersecurity researcher from Thailand and leader of **GrimSec Ops**.
+I break binaries, study mitigations, and document the path from crash to
+control-flow.
 
 [![GrimSec Ops](https://img.shields.io/badge/GRIMSEC-OPS-8b5cf6?style=for-the-badge)](https://grimsec.space)
-[![Medium](https://img.shields.io/badge/Medium-@Vxmp_-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@Vxmp_)
-[![CTFtime](https://img.shields.io/badge/CTFtime-Team_421399-d9e2ec?style=for-the-badge)](https://ctftime.org/team/421399)
+[![Medium](https://img.shields.io/badge/WRITING-@Vxmp_-050505?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@Vxmp_)
+[![CTFtime](https://img.shields.io/badge/CTFTIME-421399-dce6f0?style=for-the-badge)](https://ctftime.org/team/421399)
 
 </div>
 
-```text
-root@vxmp:~# whoami
-Vxmp — breaking binaries, studying mitigations, and documenting the path to RIP.
+---
 
-root@vxmp:~# groups
-grimsec-ops  pwn  reverse-engineering  cryptography
+```console
+root@vxmp:~# id
+uid=0(vxmp) groups=grimsec-ops,pwn,reverse,crypto
 
-root@vxmp:~# status
-ctf is easy, right?
+root@vxmp:~# cat /proc/focus
+memory corruption · exploit mitigations · glibc internals · reliable primitives
+
+root@vxmp:~# ./status
+leading GrimSec Ops // playing CTFs // writing down what survives
 ```
 
-## `./about`
+## `0x00 / operator`
 
-I focus on binary exploitation: memory corruption, heap internals, exploit
-mitigations, and the small implementation details that turn a crash into a
-reliable primitive. I play jeopardy CTFs with
-[GrimSec Ops](https://grimsec.space), lead the team, and publish the useful
-parts of the process as technical write-ups.
+I'm **Vxmp**, a cybersecurity researcher from Thailand and leader of
+[GrimSec Ops](https://grimsec.space). My main lane is pwn: understanding how
+software fails at the lowest useful level, turning those failures into
+primitives, and building the chain until execution is mine.
 
-```c
-focus = {
-    "pwn / binary exploitation",
-    "glibc heap internals",
-    "reverse engineering",
-    "CTF tooling and write-ups",
-    "cryptography when the board demands it"
-};
-```
+![Pwn](https://img.shields.io/badge/PWN-111827?style=flat-square)
+![Binary Exploitation](https://img.shields.io/badge/BINARY_EXPLOITATION-312e81?style=flat-square)
+![Reverse Engineering](https://img.shields.io/badge/REVERSE_ENGINEERING-4c1d95?style=flat-square)
+![Cryptography](https://img.shields.io/badge/CRYPTOGRAPHY-581c87?style=flat-square)
 
-## `cat /var/log/research.log`
+## `0x01 / research log`
 
-- [Stack Canary — The Little Bird That Isn't As Hard To Sneak Past As You Think](https://medium.com/@Vxmp_/stack-canary-the-little-bird-that-isnt-as-hard-to-sneak-past-as-you-think-f558e05888d8)
-- [NX Bit — The “No Execute” Protection That Isn't As Strong As You Think](https://medium.com/@Vxmp_/nx-bit-the-no-execute-protection-that-isnt-as-strong-as-you-think-495dda4d6903)
-- [House of Cinder: a use-after-free to RCE chain on glibc 2.44](https://medium.com/@Vxmp_/house-of-cinder-a-use-after-free-to-rce-chain-on-glibc-2-44-e9dc6ff69a0b)
-- [STDiO CTF 2026 — Pwnable Writeup](https://medium.com/@Vxmp_/stdio-ctf-2026-pwnable-writeup-3b72fafe5932)
-- [COMPFEST 2026 — Pwnable Writeup](https://medium.com/@Vxmp_/compfest-2026-pwnable-writeup-ad54ee70a43f)
+### [House of Cinder](https://medium.com/@Vxmp_/house-of-cinder-a-use-after-free-to-rce-chain-on-glibc-2-44-e9dc6ff69a0b)
 
-→ [Read everything on Medium](https://medium.com/@Vxmp_)
+> A use-after-free to RCE chain on glibc 2.44.
 
-## `ls ./work`
+### [Stack Canary](https://medium.com/@Vxmp_/stack-canary-the-little-bird-that-isnt-as-hard-to-sneak-past-as-you-think-f558e05888d8)
 
-| Project | What it is |
-|---|---|
-| [GrimSec Ops](https://github.com/accuratelyzVicxyle/grimsec) | Home of the CTF team I lead — [grimsec.space](https://grimsec.space) |
-| [VxmpCTFCollection](https://github.com/accuratelyzVicxyle/VxmpCTFCollection) | CTF material and experiments |
-| [Thai Cybersecurity Cheatsheets](https://github.com/accuratelyzVicxyle/thai-cybersecurity-cheatsheets) | Thai-language crypto reference notes and local Markdown viewer |
-| [MoonStore SQL](https://github.com/accuratelyzVicxyle/MoonStore-SQL) | SQL injection practice lab / CTF |
+> What stack canaries protect, where they fall short, and how attackers reason
+> around them.
 
-## `./contact --preferred`
+### [NX Bit](https://medium.com/@Vxmp_/nx-bit-the-no-execute-protection-that-isnt-as-strong-as-you-think-495dda4d6903)
 
-- Team and recruiting: [grimsec.space](https://grimsec.space)
-- Research and write-ups: [medium.com/@Vxmp_](https://medium.com/@Vxmp_)
-- CTF results: [GrimSec Ops on CTFtime](https://ctftime.org/team/421399)
+> Why non-executable memory changes an exploit without ending the attack.
+
+<details>
+<summary><strong>More CTF write-ups</strong></summary>
+<br>
+
+- [STDiO CTF 2026 — Pwnable](https://medium.com/@Vxmp_/stdio-ctf-2026-pwnable-writeup-3b72fafe5932)
+- [COMPFEST 2026 — Pwnable](https://medium.com/@Vxmp_/compfest-2026-pwnable-writeup-ad54ee70a43f)
+- [STALEMATE — Detailed Pwn Write-up](https://medium.com/@Vxmp_/stalemate-detailed-ctf-pwn-writeup-by-vxmp-1b84321ce8b8)
+- [Break The Syntax CTF 2026 — Pwnable](https://medium.com/@Vxmp_/break-the-syntax-ctf-btsctf-2026-writeup-pwnable-f96471c4b6c1)
+
+</details>
+
+## `0x02 / signal`
+
+| | |
+|---:|:---|
+| **Team** | [GrimSec Ops](https://grimsec.space) |
+| **Writing** | [medium.com/@Vxmp_](https://medium.com/@Vxmp_) |
+| **CTF record** | [CTFtime / team 421399](https://ctftime.org/team/421399) |
+| **Based in** | Thailand 🇹🇭 |
+
+---
 
 <div align="center">
 
-`Thailand · GrimSec Ops · break it, understand it, write it down`
+<sub><code>ctf is easy, right?</code></sub>
 
 </div>
